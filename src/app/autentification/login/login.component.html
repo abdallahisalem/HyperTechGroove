@@ -1,0 +1,25 @@
+<div class="">
+  <h3 class="">Log in</h3>
+  <p>Enter at your own risk. We're not responsible for any addiction to our app.</p>
+  <br>
+  <div class="container p-3 ">
+    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+      <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+      <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="emailOrUsername" formControlName="emailOrUsername"
+          placeholder="name@example.com">
+        <label for="floatingInput">Email Or Username</label>
+      </div>
+      <br>
+      <div class="form-floating">
+        <input type="password" id="password" class="form-control" formControlName="password"
+          placeholder="name@example.com">
+        <label for="floatingInput">Password</label>
+      </div>
+      <br>
+      <button class="btn btn-outline-success" type="submit" [disabled]="logInForm.invalid">Submit</button>
+    </form>
+    <br>
+  </div>
+</div>
