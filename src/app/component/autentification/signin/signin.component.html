@@ -2,9 +2,6 @@
   <h3 class="">Sign up</h3>
   <p>We promise not to sell your information to anyone who won't pay top dollar.</p>
   <br>
-  <style>
-
-  </style>
   <div class="container">
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
       <div class="form-floating">
@@ -27,13 +24,20 @@
         <label for="floatingInput">Username</label>
       </div>
       <br>
-      <div class="form-floating">
-        <input type="password" id="password" class="form-control" formControlName="password" placeholder="password">
+      <div class="form-floating input-group">
+        <input type="{{ passwordType }}" id="password" class="form-control" formControlName="password"
+          placeholder="name@example.com">
         <label for="floatingInput">Password</label>
+        <button type="button" class="btn btn-outline-light btn-password-toggle" (click)="togglePasswordVisibility()">
+          <span *ngIf="passwordType === 'password'">Show</span>
+          <span *ngIf="passwordType === 'text'">Hide</span>
+        </button>
       </div>
       <br>
+      <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}} <br></div>
+      <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}} <br></div>
+      
       <button class="btn btn-outline-success" type="submit" [disabled]="signInForm.invalid">Submit</button>
     </form>
   </div>
-  <br>
 </div>

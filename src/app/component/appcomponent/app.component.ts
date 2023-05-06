@@ -14,8 +14,6 @@ export class AppComponent {
   isLoggedIn = false;
 
   ngOnInit() {
-    this.isLoggedIn = this.userService.isUserLoggedIn();
-    console.log('menu ->' + this.isLoggedIn);
   }
 
   constructor(private router: Router, private userService: UserService) {

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>{{ title }}</title>
+</head>
+
+<body class="d-flex h-100 text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <app-navbar></app-navbar>
+    <main class="px-3">
+      <br>
+      <div class="container">
+        <br>
+        <app-home *ngIf="showMessage"></app-home>
+        <router-outlet *ngIf="!showMessage"></router-outlet>
+      </div>
+    </main>
+    <footer class="mt-auto text-white-50">
+      <p>All rights reserved to the author of the application!</p>
+    </footer>
+  </div>
+</body>
+
+</html>
