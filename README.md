@@ -16,5 +16,7 @@ How to use MyApp
 
 To use MyApp, simply clone the repository and run the following command:
 
+```bash
 ng serve
+```
 This will start the Angular development server on port 4200. You can then open MyApp in your web browser by navigating to http://localhost:4200.
