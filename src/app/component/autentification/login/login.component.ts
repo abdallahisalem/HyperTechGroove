@@ -11,7 +11,7 @@ import { UserService } from 'src/app/service/user.service';
 export class LogInComponent {
   title = 'login';
   logInForm: FormGroup;
-  errorMessage = 'Invalid Credentials';
+  errorMessage = 'ERR_CONNECTION_REFUSED';
   successMessage: string = "";
   invalidLogin = false;
   loginSuccess = false;
@@ -41,7 +41,8 @@ export class LogInComponent {
       error: (error) => {
         console.error(error);
         // alert("loggin error!");
-        this.errorMessage = error.error.message;
+        if(error.error.message)this.errorMessage = error.error.message
+        ;
         this.invalidLogin = true;
         this.loginSuccess = false;
         // handle error response from the backend

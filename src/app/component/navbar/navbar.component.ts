@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
+import { AppComponent } from '../appcomponent/app.component';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +10,14 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   showMessage = false;
 
-  isLoggedIn = false;
-
+  isLoggedIn;
+  constructor(private userService: UserService){
+    this.isLoggedIn = userService.isLoggedIn();
+    console.log(this.isLoggedIn);
+  }
   ngOnInit() {
+  }
+  logout(){
+    this.userService.logout();
   }
 }

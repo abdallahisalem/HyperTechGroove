@@ -11,8 +11,6 @@ export class AppComponent {
   public title = 'MyApp';
   showMessage = false;
 
-  isLoggedIn = false;
-
   ngOnInit() {
   }
 

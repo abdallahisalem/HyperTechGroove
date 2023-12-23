@@ -27,17 +27,18 @@
             <br>
             <div class="form-floating input-group">
                 <input type="{{ passwordType }}" id="password" class="form-control" formControlName="password"
-                  placeholder="name@example.com">
+                    placeholder="name@example.com">
                 <label for="floatingInput">Password</label>
-                <button type="button" class="btn btn-outline-light btn-password-toggle" (click)="togglePasswordVisibility()">
-                  <span *ngIf="passwordType === 'password'">Show</span>
-                  <span *ngIf="passwordType === 'text'">Hide</span>
+                <button type="button" class="btn btn-outline-dark btn-password-toggle"
+                    (click)="togglePasswordVisibility()">
+                    <span *ngIf="passwordType === 'password'">Show</span>
+                    <span *ngIf="passwordType === 'text'">Hide</span>
                 </button>
-              </div>
-              <br>
-              <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}} <br></div>
-              <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}} <br></div>        
-            <button class="btn btn-outline-success" type="submit" [disabled]="updateUser.invalid">Submit</button>
+            </div>
+            <br>
+            <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}} <br></div>
+            <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}} <br></div>
+            <button class="btn btn-outline-success input-group" type="submit" [disabled]="updateUser.invalid">Submit</button>
         </form>
     </div>
 </div>

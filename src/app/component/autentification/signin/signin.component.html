@@ -2,8 +2,8 @@
   <h3 class="">Sign up</h3>
   <p>We promise not to sell your information to anyone who won't pay top dollar.</p>
   <br>
-  <div class="container">
-    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <div class="container" align="center">
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" >
       <div class="form-floating">
         <input type="text" id="firstname" class="form-control" formControlName="firstname" placeholder="name">
         <label for="floatingInput">First Name</label>
@@ -28,7 +28,7 @@
         <input type="{{ passwordType }}" id="password" class="form-control" formControlName="password"
           placeholder="name@example.com">
         <label for="floatingInput">Password</label>
-        <button type="button" class="btn btn-outline-light btn-password-toggle" (click)="togglePasswordVisibility()">
+        <button type="button" class="btn btn-outline-dark btn-password-toggle" (click)="togglePasswordVisibility()">
           <span *ngIf="passwordType === 'password'">Show</span>
           <span *ngIf="passwordType === 'text'">Hide</span>
         </button>
@@ -37,7 +37,7 @@
       <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}} <br></div>
       <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}} <br></div>
       
-      <button class="btn btn-outline-success" type="submit" [disabled]="signInForm.invalid">Submit</button>
+      <button class="btn btn-outline-success input-group " type="submit" [disabled]="signInForm.invalid">Submit</button>
     </form>
   </div>
 </div>

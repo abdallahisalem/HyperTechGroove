@@ -2,19 +2,19 @@
   <h3 class="">Log in</h3>
   <p>Enter at your own risk. We're not responsible for any addiction to our app.</p>
   <br>
-  <div class="container p-3 ">
-    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+  <div class="container p-3" align="center">
+    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()" style="max-width: 30rem;">
       <div class="form-floating">
         <input type="text" class="form-control" id="identifier" formControlName="identifier"
-          placeholder="name@example.com">
+          placeholder="name@example.com" aria-required="true">
         <label for="floatingInput">Email Or Username</label>
       </div>
       <br>
       <div class="form-floating input-group">
         <input type="{{ passwordType }}" id="password" class="form-control" formControlName="password"
-          placeholder="name@example.com">
+          placeholder="name@example.com" aria-required="true">
         <label for="floatingInput">Password</label>
-        <button type="button" class="btn btn-outline-light btn-password-toggle" (click)="togglePasswordVisibility()">
+        <button type="button" class="btn btn-outline-dark btn-password-toggle" (click)="togglePasswordVisibility()">
           <span *ngIf="passwordType === 'password'">Show</span>
           <span *ngIf="passwordType === 'text'">Hide</span>
         </button>
@@ -23,7 +23,7 @@
       <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}} <br></div>
       <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}} <br></div>
       
-      <button class="btn btn-outline-success" type="submit" [disabled]="logInForm.invalid">Submit</button>
+      <button class="btn btn-outline-success input-group" type="submit" [disabled]="logInForm.invalid">Submit</button>
     </form>
     <br>
   </div>
